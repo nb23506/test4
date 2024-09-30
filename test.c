@@ -1,72 +1,30 @@
-#include <stdio.h>
+#include <assert.h>
 
-// Deklarasi fungsi yang akan diuji
+// Fungsi yang diuji
 int get_larger_number(int x, int y) {
-    if (x > y) {
-        return x;
-    } else if (y > x) {
-        return y;
-    } else {
-        return -1; // Jika sama
-    }
+    if (x > y) return x;
+    else if (y > x) return y;
+    return -1;  // Jika x dan y sama
 }
 
-// Fungsi grading untuk menguji program
-void grading() {
-    int passed = 0;
-    int total_tests = 5;
-    
-    // Kasus uji 1
-    int result = get_larger_number(10, 20);
-    if (result == 20) {
-        printf("Test 1 passed.\n");
-        passed++;
-    } else {
-        printf("Test 1 failed. Expected 20, got %d\n", result);
-    }
+void test_get_larger_number() {
+    // Test case: x < y
+    assert(get_larger_number(10, 20) == 20);
 
-    // Kasus uji 2
-    result = get_larger_number(30, 15);
-    if (result == 30) {
-        printf("Test 2 passed.\n");
-        passed++;
-    } else {
-        printf("Test 2 failed. Expected 30, got %d\n", result);
-    }
+    // Test case: x > y
+    assert(get_larger_number(30, 15) == 30);
 
-    // Kasus uji 3
-    result = get_larger_number(7, 7);
-    if (result == -1) {
-        printf("Test 3 passed.\n");
-        passed++;
-    } else {
-        printf("Test 3 failed. Expected -1, got %d\n", result);
-    }
+    // Test case: x == y
+    assert(get_larger_number(25, 25) == -1);
 
-    // Kasus uji 4
-    result = get_larger_number(-5, 5);
-    if (result == 5) {
-        printf("Test 4 passed.\n");
-        passed++;
-    } else {
-        printf("Test 4 failed. Expected 5, got %d\n", result);
-    }
+    // Test case: x < y, negative numbers
+    assert(get_larger_number(-10, 5) == 5);
 
-    // Kasus uji 5
-    result = get_larger_number(0, 0);
-    if (result == -1) {
-        printf("Test 5 passed.\n");
-        passed++;
-    } else {
-        printf("Test 5 failed. Expected -1, got %d\n", result);
-    }
+    // Test case: x > y, negative numbers
+    assert(get_larger_number(5, -10) == 5);
 
-    // Output hasil grading
-    printf("\n%d out of %d tests passed.\n", passed, total_tests);
-}
+    // Test case: x == y, zero
+    assert(get_larger_number(0, 0) == -1);
 
-// Fungsi main tetap dibutuhkan, namun tidak perlu eksplisit diubah
-int main() {
-    grading(); // Jalankan fungsi grading secara otomatis
-    return 0;
+    printf("All tests passed!\n");
 }
