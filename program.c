@@ -7,7 +7,7 @@ int larger_number(int x, int y) {
     } else if (y > x) {
         return y;
     } else {
-        return -1; // Menandakan bahwa kedua angka sama
+        return -1; // Menandakan bahwa kedua angka samaa
     }
 }
 
