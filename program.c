@@ -3,7 +3,7 @@
 int main() {
     int x, y;
 
-    // Membaca input dari pengguna
+    // read the input
     printf("Masukkan dua angka bulat (x dan y): ");
     scanf("%d %d", &x, &y);
 
