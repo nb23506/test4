@@ -1,24 +1,10 @@
-CC = gcc
-CFLAGS = -Wall
+all: program test
 
-# Executable names
-EXEC = test_program
+program: program.c
+    gcc -c program.c -o program.o
 
-# Default target
-all: $(EXEC)
+test: program.o test.c
+    gcc program.o test.c -o test_program
 
-# Compile the test program
-$(EXEC): program.o test.o
-	$(CC) $(CFLAGS) -o $(EXEC) program.o test.o
-
-# Compile object files for the main program
-program.o: program.c
-	$(CC) $(CFLAGS) -c program.c
-
-# Compile object files for testing
-test.o: test.c
-	$(CC) $(CFLAGS) -c test.c
-
-# Clean up
 clean:
-	rm -f $(EXEC) *.o
+    rm -f *.o test_program
