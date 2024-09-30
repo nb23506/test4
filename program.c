@@ -1,4 +1,4 @@
 // program.c
-int add(int a, int d) {
-    return a + d;
+int add(int a, int b) {
+    return a + b;
 }
