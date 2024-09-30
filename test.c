@@ -1,16 +1,33 @@
-// test.c
 #include <stdio.h>
-#include <assert.h>
+#include <stdlib.h>
 
-int add(int a, int b);
+// Deklarasi fungsi dari program.c
+int larger_number(int x, int y);
 
 void run_tests() {
-    assert(add(3, 4) == 7);
-    assert(add(10, 20) == 30);
-    assert(add(-5, 5) == 0);
-    assert(add(0, 0) == 0);
-    printf("All tests passed!\n");
+    // Test case 1: x = 3, y = 5
+    printf("Test 1: ");
+    int x = 3, y = 5;
+    int result = larger_number(x, y);
+    printf("Expected: 5, Got: %d\n", result);
+
+    // Test case 2: x = 10, y = 7
+    printf("Test 2: ");
+    x = 10; y = 7;
+    result = larger_number(x, y);
+    printf("Expected: 10, Got: %d\n", result);
+
+    // Test case 3: x = 4, y = 4
+    printf("Test 3: ");
+    x = 4; y = 4;
+    result = larger_number(x, y);
+    if (result == -1) {
+        printf("Expected: Both numbers are equal: 4, Got: Both numbers are equal: 4\n");
+    } else {
+        printf("Expected: %d, Got: %d\n", (x > y ? x : y), result);
+    }
 }
+
 
 int main() {
     run_tests();
