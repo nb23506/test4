@@ -7,7 +7,7 @@ int main() {
     printf("Masukkan dua angka bulat (x dan y): ");
     scanf("%d %d", &x, &y);
 
-    // Menentukan dan mencetak angka yang lebih besar
+    // Menentukan dan mencetak angka yang lebih 
     if (x > y) {
         printf("Angka yang lebih besar adalah: %d\n", x);
     } else if (y > x) {
