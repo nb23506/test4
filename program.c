@@ -4,18 +4,17 @@ int main() {
     int x, y;
 
     // read the input
-    printf("Masukkan dua angka bulat (x dan y): ");
+    printf("Enter two integers (x and y): ");
     scanf("%d %d", &x, &y);
 
-    // Menentukan dan mencetak angka yang lebih 
+    // Determine and print the larger number
     if (x > y) {
-        printf("Angka yang lebih besar adalah: %d\n", x);
+        printf("The larger number is: %d\n", x);
     } else if (y > x) {
-        printf("Angka yang lebih besar adalah: %d\n", y);
+        printf("The larger number is: %d\n", y);
     } else {
-        printf("Kedua angka sama.\n");
+        printf("Both numbers are equal.\n");
     }
 
     return 0;
 }
-
