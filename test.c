@@ -1,10 +1,10 @@
 #include <assert.h>
 
-// Fungsi yang diuji
+// Function to be tested
 int get_larger_number(int x, int y) {
     if (x > y) return x;
     else if (y > x) return y;
-    return -1;  // Jika x dan y sama
+    return -1;  // If x and y are equal
 }
 
 void test_get_larger_number() {
