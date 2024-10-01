@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <stdio.h>
 
 // Function to be tested
 int get_larger_number(int x, int y) {
